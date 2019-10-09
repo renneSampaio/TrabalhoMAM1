@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Materials/GlowMat.tres" type="Material" id=1]
+[ext_resource path="res://Sprites/stationLife.png" type="Texture" id=2]
+
+[node name="TextureRect" type="TextureRect"]
+material = ExtResource( 1 )
+margin_right = 48.0
+margin_bottom = 62.0
+texture = ExtResource( 2 )

@@ -1,0 +1,466 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Lato/Lato-Black.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Display.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Refs/front_full.png" type="Texture" id=4]
+[ext_resource path="res://Refs/front02.png" type="Texture" id=5]
+[ext_resource path="res://Refs/front01.png" type="Texture" id=6]
+[ext_resource path="res://Refs/game_area.png" type="Texture" id=7]
+[ext_resource path="res://UI/DifficultyButtonGroup.tres" type="ButtonGroup" id=8]
+[ext_resource path="res://default_env.tres" type="Environment" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 11
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 9
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 11
+extra_spacing_char = 11
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 11
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = ExtResource( 2 )
+
+[node name="Game" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="Case" type="Node2D" parent="."]
+
+[node name="FrontPanel" type="Polygon2D" parent="Case"]
+position = Vector2( -236.165, -268.908 )
+color = Color( 0, 0, 0, 1 )
+antialiased = true
+polygon = PoolVector2Array( 336.165, 268.908, 336.165, 658.908, 226.165, 658.908, 226.165, 778.908, 646.165, 778.908, 646.165, 658.908, 539.653, 658.151, 540.515, 269.992 )
+
+[node name="Score" type="Label" parent="Case/FrontPanel"]
+margin_left = 415.165
+margin_top = 321.908
+margin_right = 463.165
+margin_bottom = 340.908
+custom_fonts/font = SubResource( 1 )
+text = "SCORE"
+align = 1
+valign = 1
+
+[node name="Score10" type="Label" parent="Case/FrontPanel"]
+margin_left = 496.0
+margin_top = 413.0
+margin_right = 512.0
+margin_bottom = 437.0
+custom_fonts/font = SubResource( 2 )
+text = "10"
+align = 2
+valign = 1
+
+[node name="InvaderZone" type="Label" parent="Case/FrontPanel"]
+margin_left = 363.165
+margin_top = 535.908
+margin_right = 444.165
+margin_bottom = 559.908
+rect_rotation = -89.9999
+custom_fonts/font = SubResource( 3 )
+text = "INVADER ZONE"
+align = 1
+valign = 1
+
+[node name="Ground" type="Label" parent="Case/FrontPanel"]
+margin_left = 350.165
+margin_top = 579.908
+margin_right = 431.165
+margin_bottom = 603.908
+rect_rotation = -89.9999
+custom_fonts/font = SubResource( 3 )
+text = "GROUND"
+align = 1
+valign = 1
+
+[node name="Score5" type="Label" parent="Case/FrontPanel"]
+margin_left = 496.165
+margin_top = 436.908
+margin_right = 512.165
+margin_bottom = 460.908
+custom_fonts/font = SubResource( 2 )
+text = "5"
+align = 2
+valign = 1
+
+[node name="Score4" type="Label" parent="Case/FrontPanel"]
+margin_left = 496.165
+margin_top = 460.908
+margin_right = 512.165
+margin_bottom = 484.908
+custom_fonts/font = SubResource( 2 )
+text = "4"
+align = 2
+valign = 1
+
+[node name="Score3" type="Label" parent="Case/FrontPanel"]
+margin_left = 496.0
+margin_top = 485.0
+margin_right = 512.0
+margin_bottom = 509.0
+custom_fonts/font = SubResource( 2 )
+text = "3"
+align = 2
+valign = 1
+
+[node name="Score2" type="Label" parent="Case/FrontPanel"]
+margin_left = 496.165
+margin_top = 508.908
+margin_right = 512.165
+margin_bottom = 532.908
+custom_fonts/font = SubResource( 2 )
+text = "2"
+align = 2
+valign = 1
+
+[node name="Score1" type="Label" parent="Case/FrontPanel"]
+margin_left = 496.165
+margin_top = 532.908
+margin_right = 512.165
+margin_bottom = 556.908
+custom_fonts/font = SubResource( 2 )
+text = "1"
+align = 2
+valign = 1
+
+[node name="G" type="Label" parent="Case/FrontPanel"]
+margin_left = 494.165
+margin_top = 560.908
+margin_right = 510.165
+margin_bottom = 584.908
+custom_fonts/font = SubResource( 2 )
+text = "G"
+align = 2
+valign = 1
+
+[node name="M" type="Label" parent="Case/FrontPanel"]
+margin_left = 495.165
+margin_top = 589.908
+margin_right = 511.165
+margin_bottom = 613.908
+custom_fonts/font = SubResource( 2 )
+text = "M"
+align = 2
+valign = 1
+
+[node name="LevelIndicator" type="Label" parent="Case/FrontPanel"]
+margin_left = 379.0
+margin_top = 714.0
+margin_right = 433.0
+margin_bottom = 738.0
+custom_fonts/font = SubResource( 4 )
+text = "123"
+align = 1
+valign = 1
+
+[node name="Level" type="Label" parent="Case/FrontPanel"]
+margin_left = 380.165
+margin_top = 746.908
+margin_right = 434.165
+margin_bottom = 770.908
+custom_fonts/font = SubResource( 5 )
+text = "LEVEL"
+align = 1
+valign = 1
+
+[node name="MS" type="Label" parent="Case/FrontPanel"]
+margin_left = 397.165
+margin_top = 628.908
+margin_right = 478.165
+margin_bottom = 652.908
+custom_fonts/font = SubResource( 6 )
+text = "MISSILE STATION"
+align = 1
+valign = 1
+
+[node name="MS2" type="Label" parent="Case/FrontPanel"]
+margin_left = 536.165
+margin_top = 688.908
+margin_right = 617.165
+margin_bottom = 712.908
+custom_fonts/font = SubResource( 6 )
+text = "APERTE
+ESPAÇO
+PARA 
+ATIRAR"
+align = 1
+valign = 1
+
+[node name="MS3" type="Label" parent="Case/FrontPanel"]
+margin_left = 258.165
+margin_top = 688.908
+margin_right = 339.165
+margin_bottom = 749.908
+custom_fonts/font = SubResource( 6 )
+text = "A: Esquerda
+D: Direita"
+align = 1
+valign = 1
+
+[node name="Lines" type="Node2D" parent="Case/FrontPanel"]
+editor/display_folded = true
+
+[node name="Line2D" type="Line2D" parent="Case/FrontPanel/Lines"]
+points = PoolVector2Array( 496.165, 298.908, 496.069, 403.27 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D15" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -13.835, 8.90793 )
+points = PoolVector2Array( 460, 340, 525, 340 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D2" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.0392151, 108.327 )
+points = PoolVector2Array( 496.165, 298.908, 496.126, 324.581, 511.126, 324.581 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D3" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 131.908 )
+points = PoolVector2Array( 496, 306, 496.126, 324.581, 511.126, 324.581 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D4" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 155.908 )
+points = PoolVector2Array( 496, 306, 496.126, 324.581, 511.126, 324.581 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D5" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 180.908 )
+points = PoolVector2Array( 496, 306, 496.126, 324.581, 511.126, 324.581 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D6" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 204.908 )
+points = PoolVector2Array( 496, 306, 496.126, 324.581, 511.126, 324.581 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D7" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 228.908 )
+points = PoolVector2Array( 496, 306, 496.126, 324.581, 511.126, 324.581 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D8" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 251.908 )
+points = PoolVector2Array( 496, 306, 496.126, 324.581, 496, 335 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D11" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -113.835, 253.908 )
+rotation = 0.000207599
+points = PoolVector2Array( 499.064, 309.896, 496.064, 309.897, 496.069, 330.897, 499.069, 330.896 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D17" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -124.835, 244.908 )
+rotation = 0.000207599
+points = PoolVector2Array( 488.066, 319.899, 488.069, 330.899, 500.069, 330.896 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D18" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -105.835, 308.908 )
+rotation = 0.000207599
+points = PoolVector2Array( 483.061, 291.9, 468.061, 291.903, 468.069, 330.903, 500.069, 330.896 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D13" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -113.835, 98.908 )
+rotation = 0.000207599
+points = PoolVector2Array( 500.065, 310.896, 496.065, 310.897, 496.069, 330.897, 500.069, 330.896 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D14" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -113.835, 72.9079 )
+rotation = 0.000207599
+points = PoolVector2Array( 546.057, 276.887, 496.057, 276.897, 496.069, 330.897, 500.069, 330.896 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D12" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -113.835, 178.908 )
+rotation = 0.000207599
+points = PoolVector2Array( 500.053, 254.896, 496.053, 254.897, 496.079, 379.897, 500.079, 379.896 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D9" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 283.908 )
+points = PoolVector2Array( 496, 306, 496.126, 324.581, 496, 368 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D16" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( -63.835, 378.908 )
+points = PoolVector2Array( 563, 336, 498, 336, 440, 336 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Line2D10" type="Line2D" parent="Case/FrontPanel/Lines"]
+position = Vector2( 0.165009, 283.908 )
+points = PoolVector2Array( 385, 306, 382, 306, 382, 326, 495, 326, 511, 326 )
+width = 2.0
+default_color = Color( 1, 1, 1, 1 )
+texture_mode = 1998611811
+
+[node name="Triangle" type="Polygon2D" parent="Case/FrontPanel"]
+position = Vector2( -0.834991, 0.907928 )
+polygon = PoolVector2Array( 436.165, 338.908, 439.165, 349.908, 442.165, 338.908 )
+
+[node name="SideBottom" type="Polygon2D" parent="Case"]
+color = Color( 0.67451, 0.658824, 0.215686, 1 )
+antialiased = true
+polygon = PoolVector2Array( 100, 380, 40, 350, -10, 380 )
+
+[node name="SideBottom2" type="Polygon2D" parent="Case"]
+position = Vector2( 402.663, 7.32681 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+color = Color( 0.613281, 0.598867, 0.19165, 1 )
+antialiased = true
+polygon = PoolVector2Array( 100, 380, 40, 350, -10, 380, 38.9203, 380 )
+
+[node name="SideTop" type="Polygon2D" parent="Case"]
+position = Vector2( 30, -70 )
+color = Color( 1, 0.992157, 0.388235, 1 )
+antialiased = true
+polygon = PoolVector2Array( 70, 450, 70, 70, 44.0752, -9.52003, 10, 420 )
+
+[node name="SideTop2" type="Polygon2D" parent="Case"]
+position = Vector2( 373.982, -63.1744 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+color = Color( 1, 0.992157, 0.388235, 1 )
+antialiased = true
+polygon = PoolVector2Array( 70, 450, 69.9818, 59.1746, 44.0752, -9.52003, 10, 420 )
+
+[node name="Display" parent="." instance=ExtResource( 3 )]
+
+[node name="Refs" type="Node2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="front_full" type="Sprite" parent="Refs"]
+modulate = Color( 1, 1, 1, 0.396078 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="front02" type="Sprite" parent="Refs"]
+modulate = Color( 1, 1, 1, 0.301961 )
+position = Vector2( -12, 382.294 )
+scale = Vector2( 1.00498, 1.00498 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="front01" type="Sprite" parent="Refs"]
+self_modulate = Color( 1, 1, 1, 0.352941 )
+position = Vector2( 104.397, 3 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="game_area" type="Sprite" parent="Refs"]
+modulate = Color( 1, 1, 1, 0.435294 )
+position = Vector2( 147, 138 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="UI" type="Control" parent="."]
+editor/display_folded = true
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Switch" type="CheckButton" parent="UI"]
+margin_left = 202.339
+margin_top = 453.482
+margin_right = 278.339
+margin_bottom = 493.482
+focus_mode = 0
+pressed = true
+enabled_focus_mode = 0
+flat = true
+
+[node name="Level1" type="CheckBox" parent="UI"]
+margin_left = 141.225
+margin_top = 462.553
+margin_right = 165.225
+margin_bottom = 486.553
+pressed = true
+group = ExtResource( 8 )
+
+[node name="Level2" type="CheckBox" parent="UI"]
+margin_left = 156.19
+margin_top = 462.993
+margin_right = 180.19
+margin_bottom = 486.993
+group = ExtResource( 8 )
+
+[node name="Level3" type="CheckBox" parent="UI"]
+margin_left = 171.594
+margin_top = 462.993
+margin_right = 195.594
+margin_bottom = 486.993
+group = ExtResource( 8 )
+
+[node name="InvaderSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="BlinkTimer" type="Timer" parent="."]
+
+[node name="UfoSpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 9 )
+[connection signal="toggled" from="UI/Switch" to="." method="_on_Switch_toggled"]
+[connection signal="pressed" from="UI/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="UI/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="UI/Level3" to="." method="_on_Level3_pressed"]
+[connection signal="timeout" from="InvaderSpawnTimer" to="." method="_on_InvaderSpawnTimer_timeout"]
+[connection signal="timeout" from="BlinkTimer" to="." method="toogle_display"]
+[connection signal="timeout" from="UfoSpawnTimer" to="." method="_on_UfoSpawnTimer_timeout"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Materials/GlowMat.tres" type="Material" id=1]
+[ext_resource path="res://Fonts/digital_7/digital-7 (mono italic).ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/Station.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/StationLife.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+use_mipmaps = true
+use_filter = true
+extra_spacing_top = -8
+extra_spacing_char = 7
+font_data = ExtResource( 2 )
+
+[node name="Display" type="Node2D"]
+pause_mode = 1
+position = Vector2( 172, 334 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+modulate = Color( 1, 1, 1.6, 1 )
+material = ExtResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -238.0
+margin_right = 57.0
+margin_bottom = -210.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+valign = 1
+clip_text = true
+
+[node name="Station" parent="." instance=ExtResource( 3 )]
+position = Vector2( 28.9157, -29.8098 )
+
+[node name="StationLife" parent="." instance=ExtResource( 4 )]
+position = Vector2( 29.0787, -13.4243 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Columns" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Left" type="Position2D" parent="Columns"]
+position = Vector2( 8.56624, -5.58817 )
+
+[node name="Middle" type="Position2D" parent="Columns"]
+position = Vector2( 29.4253, -5.58817 )
+
+[node name="Right" type="Position2D" parent="Columns"]
+position = Vector2( 49.9845, -5.58817 )
+
+[node name="InvaderZone" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="TopLeft" type="Position2D" parent="InvaderZone"]
+position = Vector2( -23.3007, -190.478 )
+
+[node name="BottomRight" type="Position2D" parent="InvaderZone"]
+position = Vector2( 84.9399, -17.6761 )
